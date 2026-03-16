@@ -17,4 +17,20 @@ class PanierTest {
         // Affirmer
         assertEquals(1, panier.nombreArticles());
     }
+
+    @Test
+    void calculerTotalDoitRetournerLaSommeDessousTotaux() {
+        //Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo bleu", 1.50);
+        Article article2 = new Article("REF-002", "Stylo vert", 1.50);
+        //
+        //Agir
+        panier.ajouterArticle(article, 3);
+        panier.ajouterArticle(article2, 3);
+        //Affirmer
+        assertEquals(9, panier.calculerTotal());
+    }
+
+    
 }
