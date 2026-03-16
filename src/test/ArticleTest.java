@@ -43,4 +43,13 @@ public class ArticleTest {
             Article article = new Article("REF-001", "", 1.0);
         });
     }
+
+    @Test
+    void prixNegatifAlaCreationDoitLeverException() {
+        //Arranger
+        //Agir & Affirmer
+        assertThrows(IllegalArgumentException.class, () -> {
+            Article article = new Article("REF-001", "X", -1.0);
+        });
+    }
 }
