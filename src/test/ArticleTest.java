@@ -34,4 +34,13 @@ public class ArticleTest {
             Article article = new Article(null, "Règle", 1.0);
         });
     }
+
+    @Test
+    void nomVideDoitLeverException() {
+        //Arranger
+        //Agir & Affirmer
+        assertThrows(IllegalArgumentException.class, () -> {
+            Article article = new Article("REF-001", "", 1.0);
+        });
+    }
 }
