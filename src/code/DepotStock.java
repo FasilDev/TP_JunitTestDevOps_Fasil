@@ -1,4 +1,4 @@
-import java.time.LocalDateTime;
+package code;
 
 // Interface du dépôt de stock (à implémenter en test)
 public interface DepotStock {
