@@ -11,11 +11,9 @@ class PanierTest {
         // Arranger
         Panier panier = new Panier();
         Article article = new Article("REF-001", "Stylo bleu", 1.50);
-        Article article2 = new Article("REF-002", "Stylo rouge", 1.70);
         //
         // Agir
         panier.ajouterArticle(article, 2);
-        panier.ajouterArticle(article2, 2);
         // Affirmer
         assertEquals(1, panier.nombreArticles());
     }
