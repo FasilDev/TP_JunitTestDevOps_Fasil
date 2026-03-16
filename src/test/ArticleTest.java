@@ -52,4 +52,14 @@ public class ArticleTest {
             Article article = new Article("REF-001", "X", -1.0);
         });
     }
+
+    @Test
+    void setPrixNegatifDoitLeverException() {
+        //Arranger
+        Article article = new Article("REF-001", "X", 2.0);
+        //Agir & Affirmer
+        assertThrows(IllegalArgumentException.class, () -> {
+            article.setPrix(-5.0);
+        });
+    }
 }
