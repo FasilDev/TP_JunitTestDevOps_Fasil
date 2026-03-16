@@ -32,5 +32,15 @@ class PanierTest {
         assertEquals(9, panier.calculerTotal());
     }
 
-    
+    @Test
+    void panierVideDoitRetournerEstVideEgalTrue() {
+        //Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo1", 1.50);
+        Article article2 = new Article("REF-002", "Stylo2", 2.50);
+        //
+        //Agir
+        //Affirmer
+        assertTrue(panier.estVide());
+    }
 }
