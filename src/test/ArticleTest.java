@@ -25,4 +25,13 @@ public class ArticleTest {
         //Affirmer
         assertEquals(1.50, article.getPrix(), 0.001);
     }
+
+    @Test
+    void referenceNulleDoitLeverException() {
+        //Arranger
+        //Agir & Affirmer
+        assertThrows(IllegalArgumentException.class, () -> {
+            Article article = new Article(null, "Règle", 1.0);
+        });
+    }
 }
