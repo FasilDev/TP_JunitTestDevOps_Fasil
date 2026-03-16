@@ -43,4 +43,18 @@ class PanierTest {
         //Affirmer
         assertTrue(panier.estVide());
     }
+
+    @Test
+    void panierAvecArticlesNeDoitPasEtreVide() {
+        //Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo1", 1.50);
+        Article article2 = new Article("REF-002", "Stylo2", 2.50);
+        //
+        //Agir
+        panier.ajouterArticle(article, 3);
+        panier.ajouterArticle(article2, 4);
+        //Affirmer
+        assertFalse(panier.estVide());
+    }
 }
