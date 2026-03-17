@@ -121,4 +121,15 @@ class PanierTest {
         //Affirmer
         assertEquals(0.0, panier.calculerTotal(), 0.001);
     }
+
+    @Test
+    void quantiteUneDoitEtreAcceptee() {
+        //Arranger
+        Panier panier = new Panier();
+        Article articleL = new Article("REF-037", "Lampe LED bureau", 9.99);
+        //Agir
+        panier.ajouterArticle(articleL, 1);
+        //Affirmer
+        assertEquals(9.99, panier.calculerTotal(), 0.001);
+    }
 }
