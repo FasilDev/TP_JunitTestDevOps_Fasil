@@ -66,4 +66,13 @@ class PanierTest {
                 panier.ajouterArticle(article, 0)
         );
     }
+
+    @Test
+    void articleNulDoitLeverUneException() {
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo", 1.50);
+        assertThrows(IllegalArgumentException.class, () ->
+                panier.ajouterArticle(null, 1)
+        );
+    }
 }
