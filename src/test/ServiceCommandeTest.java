@@ -52,5 +52,14 @@ class ServiceCommandeTest {
         assertThrows(IllegalArgumentException.class, () ->
                 service.passerCommande(panier, ""));
     }
+
+    @Test
+    void stockInsuffisantDoitLeverStockInsuffisantException() {
+        //Arranger
+        //Agir & Affirmer
+        panier.ajouterArticle(articleTest, 105);
+        assertThrows(StockInsuffisantException.class, () ->
+            service.passerCommande(panier, "CLIENT-43"));
+    }
 };
 
