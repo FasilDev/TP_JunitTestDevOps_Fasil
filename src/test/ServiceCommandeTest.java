@@ -61,5 +61,16 @@ class ServiceCommandeTest {
         assertThrows(StockInsuffisantException.class, () ->
             service.passerCommande(panier, "CLIENT-43"));
     }
+
+    @Test
+    void totalCommandeDoitCorrespondreAuTotalDuPanier()  {
+        //Arranger
+        //Agir
+        panier.ajouterArticle(articleTest, 2);
+        Commande commande = service.passerCommande(panier, "CLIENT-44");
+        //Affirmer
+        assertEquals(panier.calculerTotal(), commande.total(), 0.001);
+    }
+
 };
 
