@@ -44,5 +44,13 @@ class ServiceCommandeTest {
                 service.passerCommande(panier, null));
     }
 
+    @Test
+    void identifiantClientVideDoitLeverException() {
+        //Arranger
+        //Agir & Affirmer
+        panier.ajouterArticle(articleTest, 2);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.passerCommande(panier, ""));
+    }
 };
 
