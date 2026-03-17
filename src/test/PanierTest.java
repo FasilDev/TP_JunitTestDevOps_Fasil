@@ -152,6 +152,21 @@ class PanierTest {
         //Agir
         panier.ajouterArticle(articleT, 1);
         //Affirmer
-        assertEquals(1, panier.nombreArticles(), 0.001);
+        assertEquals(999.99, panier.calculerTotal(), 0.001);
+    }
+
+    @Test
+    void plusieursArticlesDifferentsDansPanier() {
+        //Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo", 1.50);
+        Article articleL = new Article("REF-037", "Lampe LED bureau", 9.99);
+        Article articleT = new Article("REF-E46", "TV OLED 4K", 999.99);
+        //Agir
+        panier.ajouterArticle(article, 1);
+        panier.ajouterArticle(articleT, 1);
+        panier.ajouterArticle(articleL, 1);
+        //Affirmer
+        assertEquals(1011.48, panier.calculerTotal(), 0.001);
     }
 }
