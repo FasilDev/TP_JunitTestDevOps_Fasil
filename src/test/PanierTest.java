@@ -88,4 +88,15 @@ class PanierTest {
                 panier.ajouterArticle(article, -3)
         );
     }
+
+    @Test
+    void codeReductionVideDoitLeverException() {
+        //Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo", 1.50);
+        //Agir & Affirmer
+        assertThrows(IllegalArgumentException.class, () ->
+                panier.appliquerCodeReduction("")
+        );
+    }
 }
