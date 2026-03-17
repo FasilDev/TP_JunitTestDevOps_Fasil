@@ -110,4 +110,15 @@ class PanierTest {
                 panier.appliquerCodeReduction(null)
         );
     }
+
+    @Test
+    void articleGratuitDoitEtreAccepte() {
+        //Arranger
+        Panier panier = new Panier();
+        Article articleGratuit = new Article("OFFERT-01", "Stylo offert", 0.0);
+        //Agir
+        panier.ajouterArticle(articleGratuit, 1);
+        //Affirmer
+        assertEquals(0.0, panier.calculerTotal(), 0.001);
+    }
 }
