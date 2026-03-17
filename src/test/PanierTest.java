@@ -143,4 +143,15 @@ class PanierTest {
         //Affirmer
         assertEquals(999.99, panier.calculerTotal(), 0.001);
     }
+
+    @Test
+    void panierAvecUnSeulArticleDoitFonctionner() {
+        //Arranger
+        Panier panier = new Panier();
+        Article articleT = new Article("REF-E46", "TV OLED 4K", 999.99);
+        //Agir
+        panier.ajouterArticle(articleT, 1);
+        //Affirmer
+        assertEquals(1, panier.nombreArticles(), 0.001);
+    }
 }
