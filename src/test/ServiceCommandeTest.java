@@ -30,8 +30,19 @@ class ServiceCommandeTest {
     @Test
     void panierVideDoitLeverIllegalStateException() {
         //Arranger
-        //Agir
+        //Agir & Affirmer
         assertThrows(IllegalStateException.class, () ->
             service.passerCommande(panier, "C1"));
         }
-    };
+
+    @Test
+    void identifiantClientNulDoitLeverException() {
+        //Arranger
+        //Agir & Affirmer
+        panier.ajouterArticle(articleTest, 2);
+        assertThrows(IllegalArgumentException.class, () ->
+                service.passerCommande(panier, null));
+    }
+
+};
+
