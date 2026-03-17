@@ -99,4 +99,15 @@ class PanierTest {
                 panier.appliquerCodeReduction("")
         );
     }
+
+    @Test
+    void codeReductionNulDoitLeverException() {
+        //Arranger
+        Panier panier = new Panier();
+        Article article = new Article("REF-001", "Stylo", 1.50);
+        //Agir & Affirmer
+        assertThrows(IllegalArgumentException.class, () ->
+                panier.appliquerCodeReduction(null)
+        );
+    }
 }
