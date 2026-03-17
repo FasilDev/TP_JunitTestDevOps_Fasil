@@ -26,4 +26,12 @@ class ServiceCommandeTest {
         assertNotNull(commande);
         assertEquals(7.0, commande.total(), 0.001);
     }
-}
+
+    @Test
+    void panierVideDoitLeverIllegalStateException() {
+        //Arranger
+        //Agir
+        assertThrows(IllegalStateException.class, () ->
+            service.passerCommande(panier, "C1"));
+        }
+    };
