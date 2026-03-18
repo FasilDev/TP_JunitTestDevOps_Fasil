@@ -4,14 +4,17 @@ WORKDIR /src
 
 # Copier pom.xml en premier pour profiter du cache Maven
 COPY pom.xml .
-RUN mvn dependency:go-offline -B # télécharge les dépendances une seule fois
+RUN mvn dependency:go-offline -B
+# télécharge les dépendances une seule fois
 
 # Copier le code source et compiler
 COPY src ./src
-RUN mvn package -DskipTests -B # compile + crée le JAR
+RUN mvn package -DskipTests -B
+# compile + crée le JAR
 
 # ■■ STAGE 2 : image de production ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-FROM eclipse-temurin:17-jre-alpine # JRE seulement = ~85 MB
+# JRE seulement = ~85 MB
+FROM eclipse-temurin:17-jre-alpine 
 WORKDIR /app
 
 # Récupérer uniquement le JAR produit par le stage 1
