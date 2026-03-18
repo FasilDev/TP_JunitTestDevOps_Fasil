@@ -17,8 +17,10 @@ class PanierReductionTest {
             String code, double totalAttendu) {
         // Arranger
         Panier panier = new Panier();
-        Article article = new Article("REF-001", "Classeur", 10.0);
-        panier.ajouterArticle(article, 9); // sous-total = 90.0
+        Article articleC = new Article("REF-001", "Classeur", 10.0);
+        panier.ajouterArticle(articleC, 2); // sous-total = 20.0
+        Article articleB = new Article("REF-002", "Batterie externe", 20.0);
+        panier.ajouterArticle(articleB, 4); // sous-total = 80.0
 
         // Agir
         if (code != null && !code.isBlank()) {
