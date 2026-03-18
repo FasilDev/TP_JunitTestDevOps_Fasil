@@ -1,3 +1,0 @@
-FROM alpine:latest
-LABEL Fasil ESIEE-IT
-ENTRYPOINT ["echo", "Mon premier Dockerfile"]
